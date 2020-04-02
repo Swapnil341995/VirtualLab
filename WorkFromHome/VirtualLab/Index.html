@@ -1,0 +1,157 @@
+<!DOCTYPE html>     
+<html>
+        <head> 
+            <meta charset = "utf-8"> 
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="QuadraticEqn.css">
+        </head>
+        <body> 
+    
+    <canvas id="myCanvas" style="border:5px solid #000000;">
+    </canvas>
+        <br>
+            <h3>Consider any parallelogram and place a cut along any of its diagonal :
+                <button onclick="step1()" >Step-1</button></h3>
+
+            <h3>We get 2 divided pieces :
+                <button onclick="step2()" >Step-2</button></h3>
+            
+            <h3>Aligning them together : 
+                <button onclick="step3()" >Step-3</button></h3>
+            
+            <h3>Analysing :
+                <button onclick="step4()" >Step-4</button></h3>
+    
+    <script>
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+    ctx.canvas.width  = window.innerWidth - 100;
+    ctx.canvas.height = window.innerHeight - 100;
+    ctx.font = "40px Arial";
+    
+         
+        function step1(){
+    ctx.clearRect(0, 0, window.innerWidth - 100, window.innerHeight - 100);
+    ctx.beginPath();
+    ctx.moveTo(100, 100);
+    ctx.lineTo(100, 300);
+    ctx.lineTo(300, 300);
+//    ctx.closePath();
+//    ctx.beginPath();
+    ctx.moveTo(100, 100);
+    ctx.lineTo(300, 100);
+    ctx.lineTo(300, 300);
+    //ctx.setLineDash(10,5);
+
+    ctx.closePath();
+    ctx.stroke();
+    ctx.font = "25px bold";
+    ctx.strokeText("A",90,96);
+    ctx.strokeText("B",90,320);
+    ctx.strokeText("C",290,320);
+    ctx.strokeText("D",290,96);
+
+    }
+        
+         function step2(){
+    ctx.clearRect(0, 0, window.innerWidth - 100, window.innerHeight - 100);
+             
+    ctx.beginPath();
+    ctx.moveTo(100, 100);
+    ctx.lineTo(100, 300);
+    ctx.lineTo(300, 300);
+    ctx.closePath();
+    ctx.stroke();
+             
+    ctx.beginPath();
+    ctx.moveTo(150, 100);
+    ctx.lineTo(350, 100);
+    ctx.lineTo(350, 300);
+    ctx.closePath();
+            
+    ctx.stroke();
+    ctx.font = "25px bold";
+    ctx.strokeText("A",90,96);
+    ctx.strokeText("B",90,320);
+    ctx.strokeText("C",290,320);
+             
+    ctx.strokeText("E",340,96);
+    ctx.strokeText("D",150,96);
+    ctx.strokeText("F",340,320);
+
+    }
+        
+        function step3(){
+    ctx.clearRect(0, 0, window.innerWidth - 100, window.innerHeight - 100);
+             
+    ctx.beginPath();
+    ctx.moveTo(100, 100);
+    ctx.lineTo(100, 300);
+    ctx.lineTo(300, 300);
+    ctx.closePath();
+    ctx.stroke();
+             
+    ctx.beginPath();
+    ctx.moveTo(400, 100);
+    ctx.lineTo(400, 300);
+    ctx.lineTo(600, 300);
+    ctx.closePath();
+             
+    ctx.stroke();
+    ctx.font = "25px bold";
+    ctx.strokeText("A",90,96);
+    ctx.strokeText("B",90,320);
+    ctx.strokeText("C",290,320);
+        
+    ctx.strokeText("D",390,96);
+    ctx.strokeText("E",390,320);
+    ctx.strokeText("F",590,320);
+            
+    }
+        
+    function step4(){
+    /*ctx.clearRect(0, 0, window.innerWidth - 100, window.innerHeight - 100);*/
+    ctx.font = "25px Arial"; 
+    
+    
+    ctx.strokeText(
+    "Properties of Parallelogram :",window.innerWidth - 800,window.innerHeight - 700
+    );
+    ctx.strokeText(
+    "1. Opposite sides are congruent (AB = EF).",window.innerWidth - 800,window.innerHeight - 670
+    );
+    ctx.strokeText(
+    "2. Opposite angels are congruent (B = E).",window.innerWidth - 800,window.innerHeight - 640
+    );
+    ctx.strokeText(
+    "3. Consecutive angles are supplementary (A + E = 180°).",window.innerWidth - 800,window.innerHeight - 610
+    );
+    ctx.strokeText(
+    "4. If one angle is right, then all angles are right.",window.innerWidth - 800,window.innerHeight - 580
+    );
+    ctx.strokeText(
+    "5. The diagonals of a parallelogram bisect each other.",window.innerWidth - 800,window.innerHeight - 550
+    );
+    ctx.strokeText(
+    "6. Each diagonal of a parallelogram separates it into two ",window.innerWidth - 800,window.innerHeight - 520
+    );
+    ctx.strokeText("congruent.",window.innerWidth - 775,window.innerHeight - 490
+    );
+        
+    ctx.strokeText(
+    "Let us understand this.",60,450
+    );
+    ctx.strokeText(
+    "Here it can be said that AC = DF, since it is been cut",60,480
+    );
+    ctx.strokeText("on a common diagonal of both triangle.",60,510);
+    ctx.strokeText("With this and from the properties of parallelogram, we ",60,540);
+    ctx.strokeText("can say that if we take any parallelogram and cut ",60,570);
+    ctx.strokeText("along any of its diagonal we get congruent triangles.",60,600);
+            
+    }
+        
+        </script>
+            
+    </body>
+    </html>
